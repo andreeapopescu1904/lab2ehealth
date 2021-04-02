@@ -15,7 +15,7 @@ const pagination = paginationFactory({
 const columnFormatter = (cell, row, rowIndex, formatExtraData) => {
     return (
       <a
-        href={`/persoana/${rowIndex}`}
+        href={`/persoana/${row.id}`}
         onClick={() => {
           console.log("clicked row", rowIndex);
         }}
@@ -54,22 +54,22 @@ class Home extends React.Component {
         })
     }
 
-      render() {
-        return (
-            <div className="container">
-                <BootstrapTable 
-                  keyField='id'
-                  data={ this.state.persons }
-                  columns={ this.state.columns }
-                  hover={ true }
-                  pagination={ pagination }
-                  wrapperClasses="table-responsive table-bordered"
-                  classes="table-hover table-borderless"
-                  headerClasses="header-class"
-                />
-            </div>
-        )
-      }
+    render() {
+      return (
+          <div className="container">
+              <BootstrapTable 
+                keyField='id'
+                data={ this.state.persons }
+                columns={ this.state.columns }
+                hover={ true }
+                pagination={ pagination }
+                wrapperClasses="table-responsive table-bordered"
+                classes="table-hover table-borderless"
+                headerClasses="header-class"
+              />
+          </div>
+      )
+    }
 }
 
 export default Home;
