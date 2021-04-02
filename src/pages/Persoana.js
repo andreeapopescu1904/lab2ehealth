@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
@@ -36,7 +37,10 @@ class Persoana extends React.Component {
                     <li> Diagnosis description: {this.state.persoana.diagnosis_description} </li>
                     <li> Diagnosis description detailed: {this.state.persoana.diagnosis_description_detailed} </li>
                     <li> Administered drug treatment: {this.state.persoana.administered_drug_treatment} </li>        
-                </ul>               
+                </ul>     
+                <button>
+                    <Link to="/"> Back </Link>
+                </button>          
             </div>
         )
       }
